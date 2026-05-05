@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>후쿠오카·유후인 여행 링크허브 · 구글번역 버전</title>
+<style>
+:root {
+  --bg:#f6f3ee; --paper:#fffdf9; --ink:#2f2924; --muted:#6d6258; --line:#e5d8ca;
+  --d1:#c57b57; --d2:#5d8b6a; --d3:#5f7fb5; --d4:#7d6aa5; --now:#2f6f86;
+  --talk:#8a5fbd; --papago:#06c755; --papago2:#2f80ed;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#f8f4ef 0%,#efe4d8 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.55}
+header{position:sticky;top:0;z-index:10;background:rgba(255,249,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px}
+header h1{margin:0;font-size:1.08rem;letter-spacing:-.04em}
+header p{margin:4px 0 0;color:var(--muted);font-size:.86rem}
+main{max-width:980px;margin:0 auto;padding:12px}
+.notice{background:#fff4df;border-left:4px solid #b9784d;border-radius:12px;padding:10px 12px;margin:10px 0;color:#5f4733;font-size:.9rem}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.day-box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 4px 16px rgba(80,50,20,.06)}
+.day-btn{display:block;width:100%;border:0;color:#fff;border-radius:14px;padding:13px 8px;font-weight:900;font-size:1rem;cursor:pointer}
+.day-route{display:block;text-align:center;text-decoration:none;border-radius:999px;background:#7d7065;color:#fff;font-weight:800;font-size:.78rem;padding:8px 6px;margin-top:8px}
+.d1{background:var(--d1)} .d2{background:var(--d2)} .d3{background:var(--d3)} .d4{background:var(--d4)}
+.day-sub{color:var(--muted);font-size:.78rem;text-align:center;margin-top:6px;min-height:2.2em}
+.day-section{display:none;background:rgba(255,253,249,.96);border:1px solid var(--line);border-radius:20px;padding:14px;margin:16px 0;box-shadow:0 5px 16px rgba(80,50,20,.06)}
+.day-section.active{display:block}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.badge{display:inline-block;color:#fff;font-weight:900;border-radius:999px;padding:7px 10px;min-width:64px;text-align:center;font-size:.92rem}
+h2{margin:0;font-size:1.1rem;letter-spacing:-.04em}
+.section-head p{margin:2px 0 0;color:var(--muted);font-size:.88rem}
+.timeline{white-space:pre-line;background:#fffaf4;border:1px dashed var(--line);border-radius:14px;padding:11px;font-weight:750;color:#4b3c31;font-size:.9rem;margin-bottom:12px}
+.step{background:#fffdf9;border:1px solid #eadfd3;border-radius:16px;padding:12px;margin:0;box-shadow:0 2px 8px rgba(60,40,20,.04)}
+.step-title{font-weight:900;font-size:.98rem}
+.step-memo{color:var(--muted);font-size:.88rem;margin:3px 0 8px}
+.arrow{text-align:center;color:#8a7b6b;font-weight:900;margin:8px 0}
+.btnrow{display:grid;grid-template-columns:1fr;gap:7px}
+.option-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
+.option{background:#fff7ef;border:1px solid #eadfd3;border-radius:14px;padding:10px}
+.option-title{font-weight:900;font-size:.9rem;margin-bottom:6px}
+.btn{display:block;text-align:center;text-decoration:none;color:#fff;border:0;border-radius:12px;padding:12px 10px;font-weight:900;font-size:.92rem;cursor:pointer}
+.now{background:var(--now)} .talk{background:var(--talk)} .ghost{background:#7d7065} .papago{background:var(--papago)} .papago2{background:var(--papago2)}
+.toplink{display:block;text-align:center;text-decoration:none;color:#5c5147;font-weight:900;padding:12px 0 2px}
+.modal{position:fixed;inset:0;z-index:99;display:none;background:rgba(34,28,22,.48);padding:12px;overflow:auto}
+.modal.open{display:block}
+.modal-card{background:#fffdf9;max-width:920px;margin:18px auto;border-radius:22px;padding:14px;border:1px solid var(--line);box-shadow:0 16px 50px rgba(0,0,0,.25)}
+.modal-head{position:sticky;top:0;background:#fffdf9;padding:8px 0 12px;border-bottom:1px solid var(--line);z-index:2}
+.modal-title{font-weight:900;font-size:1.05rem;margin-bottom:4px}
+.modal-sub{color:var(--muted);font-size:.88rem;margin-bottom:8px}
+.close{background:#6f5f52}
+.group-title{font-weight:900;background:#f1e7dd;border-radius:12px;padding:10px;margin:12px 0 8px;color:#49382b}
+.phrase{background:#fffaf4;border:1px solid #eadfd3;border-radius:16px;padding:12px;margin:10px 0}
+.phrase-num{font-weight:900;color:#6f4124;margin-bottom:4px}
+.jp{font-weight:900;font-size:1rem;margin:4px 0}
+.pron{color:#5f4733;font-size:.92rem;margin:4px 0}
+.ko{color:var(--muted);font-size:.9rem;margin:4px 0 8px}
+footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 28px}
+@media (min-width:760px) {
+  .home-grid{grid-template-columns:repeat(4,1fr)}
+  .btnrow{grid-template-columns:repeat(3,1fr)}
+  .phrase .btnrow{grid-template-columns:1fr}
+  .option-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<header id="top">
+  <h1>후쿠오카·유후인 3박4일 여행 링크허브</h1>
+  <p>일차별 보기 · 전체 거점 경로 · 계획/현재위치 경로 · 입국심사/티켓/이동/도착 회화 · 유명메뉴</p>
+</header>
+<main>
+  <div class="notice">
+    회화카드를 <b>입국심사·세관 + 이동 중 회화 + 티켓/교통카드 + 도착지 회화</b>로 유지하고, 3일차 쇼핑 묶음에는 <b>택스프리·면세 회화와 쇼핑몰 대표 회화</b>를 추가했습니다. 확정 음식점에는 별도 <b>리뷰 유명메뉴</b> 카드를 추가했고, 3일차 점심은 <b>사무라이 라멘</b>으로 반영했습니다.
+    예: 지하철/버스/택시/도보 길찾기에서 물어볼 말과 식당·호텔·관광지에서 쓸 말을 함께 확인할 수 있습니다.
+  </div>
+  <div class="home-grid" id="home"></div>
+  <div id="sections"></div>
+  <footer>GitHub Pages용 단일 HTML · 오른쪽 하단 플로팅 버튼 없음</footer>
+</main>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div class="modal-title" id="modalTitle">회화카드</div>
+      <div class="modal-sub" id="modalSub"></div>
+      <div class="btnrow">
+        <a class="btn papago2" target="_blank" href="https://translate.google.com/?sl=ja&tl=ko&op=translate">일본인이 말할 때: 구글번역 일본어→한국어 음성입력</a>
+        <button class="btn close" onclick="closeModal()">닫기</button>
+      </div>
+    </div>
+    <div id="phraseList"></div>
+  </div>
+</div>
+
+<script>
+const DATA = {"days": [{"id": "day1", "badge": "1일차", "class": "d1", "title": "5월 7일 · 후쿠오카 첫날", "sub": "코트호텔 / 우치노 타마고 / 오호리공원 / 멘코보 나카 / 모모치 / 야키니쿠 얏짱", "full": "https://www.google.com/maps/dir/?api=1&origin=Fukuoka+Airport+International+Terminal&destination=Court+Hotel+Fukuoka+Tenjin&waypoints=Court+Hotel+Fukuoka+Tenjin%7CUchi+no+Tamago+Hakata+Station%7COhori+Park+Japanese+Garden%7C%E9%BA%BA%E5%B7%A5%E6%88%BF%E3%81%AA%E3%81%8B+%E7%A6%8F%E5%B2%A1%7CMomochi+Seaside+Park+Fukuoka%7C%E7%84%BC%E8%82%89%E3%82%84%E3%81%A3%E3%81%A1%E3%82%83%E3%82%93+%E7%A6%8F%E5%B2%A1", "timeline": "공항 → 코트호텔 짐보관 → 우치노 타마고 → 오호리공원 & 일본정원 → 멘코보 나카 → 모모치 해변 → 야키니쿠 얏짱 → 코트호텔", "items": [{"type": "step", "title": "후쿠오카공항 → 코트호텔 후쿠오카 텐진", "origin": "Fukuoka Airport International Terminal", "dest": "Court Hotel Fukuoka Tenjin", "mode": "transit", "memo": "1일차 숙소에 짐 보관", "talk": "hotel", "travelTalk": "metro", "preTalk": "immigration", "ticketTalk": "ticket"}, {"type": "step", "title": "코트호텔 → 우치노 타마고 직판점", "origin": "Court Hotel Fukuoka Tenjin", "dest": "Uchi no Tamago Hakata Station", "mode": "transit", "memo": "아침식사", "talk": "restaurant", "travelTalk": "metro", "ticketTalk": "ticket", "menuKey": "uchino_tamago"}, {"type": "step", "title": "하카타역 → 오호리공원 일본정원", "origin": "Hakata Station", "dest": "Ohori Park Japanese Garden", "mode": "transit", "memo": "일본풍 산책, 정원 관람", "talk": "sight", "travelTalk": "metro", "ticketTalk": "ticket"}, {"type": "step", "title": "오호리공원 → 멘코보 나카 / 麺工房なか", "origin": "Ohori Park Japanese Garden", "dest": "麺工房なか 福岡", "mode": "transit", "memo": "1일차 점심 확정", "talk": "noodle", "travelTalk": "metro", "ticketTalk": "ticket", "menuKey": "menkobo_naka"}, {"type": "step", "title": "멘코보 나카 → 모모치 해변", "origin": "麺工房なか 福岡", "dest": "Momochi Seaside Park Fukuoka", "mode": "transit", "memo": "해변 산책", "talk": "sight", "travelTalk": "metro", "ticketTalk": "ticket", "menuKey": "menkobo_naka"}, {"type": "group", "title": "모모치 자유관광 묶음", "memo": "후쿠오카타워·마리존 중 컨디션 따라 선택", "talk": "sight", "travelTalk": "walking", "options": [{"label": "모모치 해변 → 후쿠오카타워", "origin": "Momochi Seaside Park Fukuoka", "dest": "Fukuoka Tower", "mode": "walking"}, {"label": "모모치 해변 → 마리존", "origin": "Momochi Seaside Park Fukuoka", "dest": "Marizon Fukuoka", "mode": "walking"}, {"label": "모모치 해변 → 하카타역", "origin": "Momochi Seaside Park Fukuoka", "dest": "Hakata Station", "mode": "transit"}], "ticketTalk": "ticket"}, {"type": "step", "title": "모모치/하카타 → 야키니쿠 얏짱", "origin": "Momochi Seaside Park Fukuoka", "dest": "焼肉やっちゃん 福岡", "mode": "transit", "memo": "1일차 저녁 확정", "talk": "restaurant", "travelTalk": "metro", "ticketTalk": "ticket", "menuKey": "yakiniku_yacchan"}, {"type": "step", "title": "야키니쿠 얏짱 → 코트호텔", "origin": "焼肉やっちゃん 福岡", "dest": "Court Hotel Fukuoka Tenjin", "mode": "transit", "memo": "숙소 복귀", "talk": "hotel", "travelTalk": "metro", "ticketTalk": "ticket", "menuKey": "yakiniku_yacchan"}]}, {"id": "day2", "badge": "2일차", "class": "d2", "title": "5월 8일 · 하카타 → 유후인", "sub": "하카타 버스터미널 / 야스하 호텔 / 긴린호수 / 갓파식당 / 유노츠보 / お食事処 玉", "full": "https://www.google.com/maps/dir/?api=1&origin=Court+Hotel+Fukuoka+Tenjin&destination=Yufuin+Yasuha&waypoints=Hakata+Bus+Terminal%7CYufuin-ekimae+Bus+Center%7CYufuin+Yasuha%7CLake+Kinrin+Yufuin%7CKappa+Shokudo+Yufuin%7CYunotsubo+Kaido+Yufuin%7C%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6+%E7%8E%89+%E7%94%B1%E5%B8%83%E9%99%A2", "timeline": "코트호텔 → 하카타 버스터미널 → 유후인 버스센터 → 야스하 호텔 → 긴린호수 → 갓파식당 → 유노츠보 거리 → お食事処 玉 → 야스하 호텔", "items": [{"type": "step", "title": "코트호텔 → 하카타 버스터미널", "origin": "Court Hotel Fukuoka Tenjin", "dest": "Hakata Bus Terminal", "mode": "transit", "memo": "유후인행 고속버스 탑승 준비", "talk": "highway_bus", "travelTalk": "metro", "ticketTalk": "ticket"}, {"type": "step", "title": "하카타 버스터미널 → 유후인 에키마에 버스센터", "origin": "Hakata Bus Terminal", "dest": "Yufuin-ekimae Bus Center", "mode": "transit", "memo": "고속버스 이동", "talk": "highway_bus", "travelTalk": "highway_bus", "ticketTalk": "ticket"}, {"type": "step", "title": "유후인 버스센터 → 유후인 야스하 호텔", "origin": "Yufuin-ekimae Bus Center", "dest": "Yufuin Yasuha", "mode": "driving", "memo": "짐 보관 또는 체크인", "talk": "hotel", "travelTalk": "taxi"}, {"type": "step", "title": "유후인 야스하 호텔 → 긴린호수", "origin": "Yufuin Yasuha", "dest": "Lake Kinrin Yufuin", "mode": "walking", "memo": "긴린호수 산책", "talk": "sight", "travelTalk": "walking"}, {"type": "step", "title": "긴린호수 → 갓파식당", "origin": "Lake Kinrin Yufuin", "dest": "Kappa Shokudo Yufuin", "mode": "walking", "memo": "2일차 점심 확정", "talk": "restaurant", "travelTalk": "walking", "menuKey": "kappa_shokudo"}, {"type": "step", "title": "갓파식당 → 유노츠보 거리", "origin": "Kappa Shokudo Yufuin", "dest": "Yunotsubo Kaido Yufuin", "mode": "walking", "memo": "먹거리, 기념품 탐방", "talk": "shopping", "travelTalk": "walking"}, {"type": "step", "title": "유노츠보 거리 → お食事処 玉", "origin": "Yunotsubo Kaido Yufuin", "dest": "お食事処 玉 由布院", "mode": "walking", "memo": "2일차 저녁 확정", "talk": "restaurant", "travelTalk": "walking", "menuKey": "oshokujidokoro_tama"}, {"type": "step", "title": "お食事処 玉 → 유후인 야스하 호텔", "origin": "お食事処 玉 由布院", "dest": "Yufuin Yasuha", "mode": "walking", "memo": "숙소 복귀", "talk": "hotel", "travelTalk": "walking"}]}, {"id": "day3", "badge": "3일차", "class": "d3", "title": "5월 9일 · 유후인 → 하카타", "sub": "사기리다이 / 사무라이 라멘 점심 / 하카타 복귀 / APA 호텔 짐보관 / 쇼핑", "full": "https://www.google.com/maps/dir/?api=1&origin=Yufuin+Yasuha&destination=APA+Hotel+Hakata+Ekimae+3chome&waypoints=%E5%B2%B3%E6%9C%AC%E3%83%BB%E9%87%91%E9%B1%97%E6%B9%96%E5%85%A5%E5%8F%A3%7CSagiridai+Observatory%7C%E5%B2%B3%E6%9C%AC%E3%83%BB%E9%87%91%E9%B1%97%E6%B9%96%E5%85%A5%E5%8F%A3%7CYufuin+Yasuha%7CRamen+Samurai+Yufuincho+Ten%7CYufuin-ekimae+Bus+Center%7CHakata+Bus+Terminal%7CAPA+Hotel+Hakata+Ekimae+3chome", "timeline": "야스하 호텔 → 다케모토 → 사기리다이 전망대 → 야스하 호텔 짐 찾기 → 사무라이 라멘 점심 → 유후인 버스센터 → 하카타 버스터미널 → APA 호텔 짐보관 → 쇼핑 → APA 호텔", "items": [{"type": "step", "title": "야스하 호텔 → 다케모토·긴린호수입구", "origin": "Yufuin Yasuha", "dest": "岳本・金鱗湖入口", "mode": "walking", "memo": "09:00 출발, 정류장 도보 이동", "talk": "local_bus", "travelTalk": "walking"}, {"type": "step", "title": "다케모토 → 사기리다이 전망대", "origin": "岳本・金鱗湖入口", "dest": "Sagiridai Observatory", "mode": "transit", "memo": "전망대 관광", "talk": "sight", "travelTalk": "local_bus", "ticketTalk": "ticket"}, {"type": "step", "title": "사기리다이 전망대 → 다케모토", "origin": "Sagiridai Observatory", "dest": "岳本・金鱗湖入口", "mode": "transit", "memo": "전망대 관광 후 복귀", "talk": "local_bus", "travelTalk": "local_bus", "ticketTalk": "ticket"}, {"type": "step", "title": "다케모토 → 유후인 야스하 호텔", "origin": "岳本・金鱗湖入口", "dest": "Yufuin Yasuha", "mode": "walking", "memo": "호텔에서 짐 찾기", "talk": "hotel", "travelTalk": "walking"}, {"type": "step", "title": "유후인 야스하 호텔 → 사무라이 라멘", "origin": "Yufuin Yasuha", "dest": "Ramen Samurai Yufuincho Ten", "mode": "driving", "memo": "3일차 점심 확정 / 하카타행 고속버스 타기 전 라멘", "talk": "noodle", "travelTalk": "taxi", "menuKey": "samurai_ramen"}, {"type": "step", "title": "사무라이 라멘 → 유후인 에키마에 버스센터", "origin": "Ramen Samurai Yufuincho Ten", "dest": "Yufuin-ekimae Bus Center", "mode": "walking", "memo": "점심 후 13:00 하카타행 고속버스 탑승 준비", "talk": "highway_bus", "travelTalk": "walking"}, {"type": "step", "title": "유후인 버스센터 → 하카타 버스터미널", "origin": "Yufuin-ekimae Bus Center", "dest": "Hakata Bus Terminal", "mode": "transit", "memo": "하카타 복귀", "talk": "highway_bus", "travelTalk": "highway_bus", "ticketTalk": "ticket"}, {"type": "step", "title": "하카타 버스터미널 → APA 호텔 하카타 에키마에 3초메", "origin": "Hakata Bus Terminal", "dest": "APA Hotel Hakata Ekimae 3chome", "mode": "walking", "memo": "하카타 도착 후 짐 먼저 보관", "talk": "hotel", "travelTalk": "walking"}, {"type": "group", "title": "하카타 도착 후 식사 후보 묶음", "memo": "점심은 사무라이 라멘으로 확정 / 하카타 도착 후 간식·저녁·대체 식사 후보", "talk": "restaurant", "travelTalk": "metro", "options": [{"label": "APA → 텐푸라 히라오 아크로스점", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Tempura Hirao Tenjin ACROS Fukuoka", "mode": "transit"}, {"label": "APA → 키와미야 함바그 PARCO점", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Kiwamiya Fukuoka Parco", "mode": "transit"}, {"label": "APA → 신신라멘 하카타데이토스", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Shin Shin Hakata Deitos", "mode": "walking"}, {"label": "APA → 오오야마 KITTE 하카타", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Hakata Motsunabe Oyama KITTE Hakata", "mode": "walking"}], "ticketTalk": "ticket"}, {"type": "group", "title": "쇼핑·기념품 후보 묶음", "memo": "하카타역·텐진·캐널시티·돈키호테 중 선택 / 택스프리·쇼핑몰 회화 포함", "talk": "shopping", "travelTalk": "metro", "options": [{"label": "APA → JR 하카타시티", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "JR Hakata City", "mode": "walking"}, {"label": "APA → DEITOS 미야게몬 시장", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "DEITOS Miyage Mon Ichiba Hakata", "mode": "walking"}, {"label": "APA → KITTE 하카타", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "KITTE Hakata", "mode": "walking"}, {"label": "APA → 텐진 지하상가", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Tenjin Underground Mall", "mode": "transit"}, {"label": "APA → 후쿠오카 PARCO", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Fukuoka PARCO", "mode": "transit"}, {"label": "APA → 캐널시티 하카타", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Canal City Hakata", "mode": "walking"}, {"label": "APA → 돈키호테 나카스점", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Don Quijote Nakasu", "mode": "walking"}], "ticketTalk": "ticket", "extraTalks": ["taxfree", "mall"]}, {"type": "step", "title": "쇼핑 후 → APA 호텔 하카타 에키마에 3초메", "origin": "Canal City Hakata", "dest": "APA Hotel Hakata Ekimae 3chome", "mode": "walking", "memo": "3일차 숙소 복귀", "talk": "hotel", "travelTalk": "walking"}]}, {"id": "day4", "badge": "4일차", "class": "d4", "title": "마지막날 · 자유여행", "sub": "일정은 비워두고 공항 이동 경로만 준비", "full": "https://www.google.com/maps/dir/?api=1&origin=APA+Hotel+Hakata+Ekimae+3chome&destination=Fukuoka+Airport+International+Terminal", "timeline": "마지막날 자유여행 → APA 호텔 또는 현재 위치에서 후쿠오카공항 국제선 이동", "items": [{"type": "step", "title": "APA 호텔 → 후쿠오카공항 국제선", "origin": "APA Hotel Hakata Ekimae 3chome", "dest": "Fukuoka Airport International Terminal", "mode": "transit", "memo": "마지막날 공항 이동", "talk": "airport", "travelTalk": "metro", "preTalk": "immigration", "ticketTalk": "ticket"}]}], "phraseSets": {"metro": [["이 역이 하카타역 맞나요?", "この駅は博多駅ですか？", "코노 에키와 하카타에키데스카?"], ["이 전철이 텐진으로 가나요?", "この電車は天神に行きますか？", "코노 덴샤와 텐진니 이키마스카?"], ["몇 번 승강장에서 타면 되나요?", "何番ホームから乗ればいいですか？", "난반 호무카라 노레바 이이데스카?"], ["어느 방향으로 타야 하나요?", "どちら方面に乗ればいいですか？", "도치라 호멘니 노레바 이이데스카?"], ["이 표로 탈 수 있나요?", "この切符で乗れますか？", "코노 킷푸데 노레마스카?"], ["교통카드를 사용할 수 있나요?", "交通系ICカードは使えますか？", "코츠케 아이시카도와 츠카에마스카?"], ["몇 정거장 가야 하나요?", "何駅行けばいいですか？", "난에키 이케바 이이데스카?"], ["여기서 갈아타야 하나요?", "ここで乗り換えますか？", "코코데 노리카에마스카?"], ["출구는 어디로 나가면 되나요?", "出口はどこから出ればいいですか？", "데구치와 도코카라 데레바 이이데스카?"], ["구글지도에서는 이쪽이라고 나오는데 맞나요?", "Googleマップではこちらと出ていますが、合っていますか？", "구구루 맙푸데와 코치라토 데테이마스가, 앗테이마스카?"], ["화장실은 어디인가요?", "トイレはどこですか？", "토이레와 도코데스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "local_bus": [["이 버스가 이 목적지로 가나요?", "このバスはこの目的地に行きますか？", "코노 바스와 코노 모쿠테키치니 이키마스카?"], ["몇 번 버스를 타야 하나요?", "何番のバスに乗ればいいですか？", "난반노 바스니 노레바 이이데스카?"], ["버스 정류장은 어디인가요?", "バス停はどこですか？", "바스테이와 도코데스카?"], ["요금은 얼마인가요?", "料金はいくらですか？", "료킨와 이쿠라데스카?"], ["교통카드를 사용할 수 있나요?", "交通系ICカードは使えますか？", "코츠케 아이시카도와 츠카에마스카?"], ["여기서 내리면 되나요?", "ここで降りればいいですか？", "코코데 오리레바 이이데스카?"], ["내릴 때 버튼을 누르면 되나요?", "降りる時はボタンを押せばいいですか？", "오리루 토키와 보탄오 오세바 이이데스카?"], ["몇 분 정도 걸리나요?", "何分くらいかかりますか？", "난분쿠라이 카카리마스카?"], ["이 버스는 하카타 버스터미널로 가나요?", "このバスは博多バスターミナルに行きますか？", "코노 바스와 하카타 바스타미나루니 이키마스카?"], ["짐을 들고 타도 괜찮나요?", "荷物を持って乗っても大丈夫ですか？", "니모츠오 못테 놋테모 다이조부데스카?"], ["다음 버스는 언제 오나요?", "次のバスはいつ来ますか？", "츠기노 바스와 이츠 키마스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "highway_bus": [["유후인행 버스 승강장은 어디인가요?", "湯布院行きのバス乗り場はどこですか？", "유후인 이키노 바스 노리바와 도코데스카?"], ["이 버스가 유후인 에키마에 버스센터로 가나요?", "このバスは由布院駅前バスセンターに行きますか？", "코노 바스와 유후인 에키마에 바스센타니 이키마스카?"], ["하카타행 버스는 여기서 타나요?", "博多行きのバスはここで乗りますか？", "하카타 이키노 바스와 코코데 노리마스카?"], ["예약 확인 부탁드립니다.", "予約の確認をお願いします。", "요야쿠노 카쿠닌오 오네가이시마스."], ["두 명입니다.", "2人です。", "후타리데스."], ["캐리어는 어디에 실으면 되나요?", "スーツケースはどこに入れればいいですか？", "스츠케스와 도코니 이레레바 이이데스카?"], ["이 줄에 서면 되나요?", "この列に並べばいいですか？", "코노 레츠니 나라베바 이이데스카?"], ["몇 번 승강장인가요?", "何番乗り場ですか？", "난반 노리바데스카?"], ["도착 시간은 언제인가요?", "到着時間はいつですか？", "토차쿠지칸와 이츠데스카?"], ["화장실은 어디인가요?", "トイレはどこですか？", "토이레와 도코데스카?"], ["여기서 내려야 하나요?", "ここで降りればいいですか？", "코코데 오리레바 이이데스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "taxi": [["여기까지 가주세요.", "ここまでお願いします。", "코코마데 오네가이시마스."], ["이 주소로 가주세요.", "この住所までお願いします。", "코노 주소마데 오네가이시마스."], ["유후인 야스하 호텔까지 가주세요.", "由布院やすはホテルまでお願いします。", "유후인 야스하 호테루마데 오네가이시마스."], ["구글지도에 표시된 곳으로 가주세요.", "Googleマップに表示されている場所までお願いします。", "구구루 맙푸니 효지사레테이루 바쇼마데 오네가이시마스."], ["대략 얼마 정도 나오나요?", "だいたいいくらくらいかかりますか？", "다이타이 이쿠라쿠라이 카카리마스카?"], ["카드 결제 가능하나요?", "カードで支払えますか？", "카도데 시하라에마스카?"], ["현금만 가능한가요?", "現金のみですか？", "겐킨노미데스카?"], ["여기서 잠깐 내려주세요.", "ここで少し降ろしてください。", "코코데 스코시 오로시테 쿠다사이."], ["천천히 가주세요.", "ゆっくりお願いします。", "윳쿠리 오네가이시마스."], ["영수증 부탁드립니다.", "領収書をお願いします。", "료슈쇼오 오네가이시마스."], ["트렁크에 짐을 넣어도 될까요?", "トランクに荷物を入れてもいいですか？", "토랑쿠니 니모츠오 이레테모 이이데스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "walking": [["이 길이 맞나요?", "この道で合っていますか？", "코노 미치데 앗테이마스카?"], ["여기에서 걸어갈 수 있나요?", "ここから歩いて行けますか？", "코코카라 아루이테 이케마스카?"], ["얼마나 걸리나요?", "どのくらいかかりますか？", "도노쿠라이 카카리마스카?"], ["이 장소가 어디인가요?", "この場所はどこですか？", "코노 바쇼와 도코데스카?"], ["입구는 어디인가요?", "入口はどこですか？", "이리구치와 도코데스카?"], ["이쪽으로 가면 되나요?", "こちらに行けばいいですか？", "코치라니 이케바 이이데스카?"], ["구글지도에서는 이쪽이라고 나오는데 맞나요?", "Googleマップではこちらと出ていますが、合っていますか？", "구구루 맙푸데와 코치라토 데테이마스가, 앗테이마스카?"], ["근처에 화장실이 있나요?", "近くにトイレはありますか？", "치카쿠니 토이레와 아리마스카?"], ["근처에 편의점이 있나요?", "近くにコンビニはありますか？", "치카쿠니 콘비니와 아리마스카?"], ["잠깐 사진을 찍어도 될까요?", "少し写真を撮ってもいいですか？", "스코시 샤신오 톳테모 이이데스카?"], ["길을 잃었습니다.", "道に迷いました。", "미치니 마요이마시타."], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "hotel": [["체크인 전인데 짐을 맡길 수 있을까요?", "チェックイン前ですが、荷物を預かっていただけますか？", "체크인 마에데스가, 니모츠오 아즈캇테 이타다케마스카?"], ["예약한 조준하입니다. 체크인 부탁드립니다.", "予約しているチョ・ジュンハです。チェックインをお願いします。", "요야쿠시테이루 조 준하데스. 체크인오 오네가이시마스."], ["짐을 찾으러 왔습니다.", "荷物を取りに来ました。", "니모츠오 토리니 키마시타."], ["체크아웃 후에도 짐을 맡길 수 있을까요?", "チェックアウト後も荷物を預かっていただけますか？", "체크아우토 고모 니모츠오 아즈캇테 이타다케마스카?"], ["체크아웃은 몇 시인가요?", "チェックアウトは何時ですか？", "체크아우토와 난지데스카?"], ["객실은 몇 층인가요?", "部屋は何階ですか？", "헤야와 난카이데스카?"], ["와이파이 비밀번호를 알려주세요.", "Wi-Fiのパスワードを教えてください。", "와이파이노 파스와도오 오시에테 쿠다사이."], ["온천은 몇 시까지 이용할 수 있나요?", "温泉は何時まで利用できますか？", "온센와 난지마데 리요 데키마스카?"], ["택시를 불러주실 수 있나요?", "タクシーを呼んでいただけますか？", "타쿠시오 욘데 이타다케마스카?"], ["수건을 하나 더 받을 수 있을까요?", "タオルをもう一枚いただけますか？", "타오루오 모 이치마이 이타다케마스카?"], ["근처에 편의점이 있나요?", "近くにコンビニはありますか？", "치카쿠니 콘비니와 아리마스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "restaurant": [["두 명인데 자리 있나요?", "2人ですが、席はありますか？", "후타리데스가, 세키와 아리마스카?"], ["예약은 하지 않았습니다.", "予約はしていません。", "요야쿠와 시테이마센."], ["대기 시간이 얼마나 걸리나요?", "待ち時間はどのくらいですか？", "마치지칸와 도노쿠라이데스카?"], ["한국어 메뉴가 있나요?", "韓国語のメニューはありますか？", "칸코쿠고노 메뉴와 아리마스카?"], ["사진이 있는 메뉴가 있나요?", "写真付きのメニューはありますか？", "샤신츠키노 메뉴와 아리마스카?"], ["가장 인기 있는 메뉴가 무엇인가요?", "一番人気のメニューは何ですか？", "이치방 닌키노 메뉴와 난데스카?"], ["이 메뉴는 몇 인분인가요?", "このメニューは何人前ですか？", "코노 메뉴와 난닌마에데스카?"], ["물을 부탁드립니다.", "お水をお願いします。", "오미즈오 오네가이시마스."], ["추가 주문해도 될까요?", "追加で注文してもいいですか？", "츠이카데 추몬시테모 이이데스카?"], ["계산 부탁드립니다.", "お会計をお願いします。", "오카이케이오 오네가이시마스."], ["카드 결제 가능하나요?", "カードで支払えますか？", "카도데 시하라에마스카?"], ["잘 먹었습니다.", "ごちそうさまでした。", "고치소사마데시타."]], "noodle": [["두 명입니다.", "2人です。", "후타리데스."], ["오늘 영업하나요?", "今日は営業していますか？", "쿄와 에이교 시테이마스카?"], ["대기표를 받아야 하나요?", "受付表に名前を書きますか？", "우케츠케효니 나마에오 카키마스카?"], ["추천 메뉴가 무엇인가요?", "おすすめのメニューは何ですか？", "오스스메노 메뉴와 난데스카?"], ["따뜻한 것으로 주세요.", "温かいものをお願いします。", "아타타카이 모노오 오네가이시마스."], ["차가운 것으로 주세요.", "冷たいものをお願いします。", "츠메타이 모노오 오네가이시마스."], ["보통 양으로 주세요.", "普通盛りでお願いします。", "후츠모리데 오네가이시마스."], ["곱빼기가 가능한가요?", "大盛りにできますか？", "오오모리니 데키마스카?"], ["파를 빼주실 수 있나요?", "ネギ抜きにできますか？", "네기누키니 데키마스카?"], ["국물이 많이 짠가요?", "スープはしょっぱいですか？", "스프와 숏파이데스카?"], ["계산 부탁드립니다.", "お会計をお願いします。", "오카이케이오 오네가이시마스."], ["맛있었습니다. 감사합니다.", "美味しかったです。ありがとうございます。", "오이시캇타데스. 아리가토 고자이마스."]], "sight": [["사진을 찍어도 되나요?", "写真を撮ってもいいですか？", "샤신오 톳테모 이이데스카?"], ["입구는 어디인가요?", "入口はどこですか？", "이리구치와 도코데스카?"], ["입장료가 있나요?", "入場料はありますか？", "뉴조료와 아리마스카?"], ["몇 시까지 볼 수 있나요?", "何時まで見られますか？", "난지마데 미라레마스카?"], ["화장실은 어디인가요?", "トイレはどこですか？", "토이레와 도코데스카?"], ["추천 사진 장소가 어디인가요?", "おすすめの写真スポットはどこですか？", "오스스메노 샤신 스폿토와 도코데스카?"], ["여기에서 바다까지 걸어갈 수 있나요?", "ここから海まで歩いて行けますか？", "코코카라 우미마데 아루이테 이케마스카?"], ["택시 승강장은 어디인가요?", "タクシー乗り場はどこですか？", "타쿠시 노리바와 도코데스카?"], ["잠깐 앉아서 쉬어도 되나요?", "少し座って休んでもいいですか？", "스코시 스왓테 야슨데모 이이데스카?"], ["이 길이 맞나요?", "この道で合っていますか？", "코노 미치데 앗테이마스카?"], ["이 주변에 카페가 있나요?", "この近くにカフェはありますか？", "코노 치카쿠니 카페와 아리마스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "shopping": [["이거 얼마인가요?", "これはいくらですか？", "코레와 이쿠라데스카?"], ["면세가 가능한가요?", "免税できますか？", "멘제이 데키마스카?"], ["여권이 필요하나요?", "パスポートは必要ですか？", "파스포토와 히츠요데스카?"], ["봉투를 주세요.", "袋をください。", "후쿠로오 쿠다사이."], ["이거 두 개 주세요.", "これを2つください。", "코레오 후타츠 쿠다사이."], ["추천 기념품이 무엇인가요?", "おすすめのお土産は何ですか？", "오스스메노 오미야게와 난데스카?"], ["유통기한은 언제까지인가요?", "賞味期限はいつまでですか？", "쇼미키겐와 이츠마데데스카?"], ["따로 포장해 주세요.", "別々に袋に入れてください。", "베츠베츠니 후쿠로니 이레테 쿠다사이."], ["카드 결제 가능하나요?", "カードで支払えますか？", "카도데 시하라에마스카?"], ["이 상품은 어디에 있나요?", "この商品はどこにありますか？", "코노 쇼힌와 도코니 아리마스카?"], ["선물용으로 포장할 수 있나요?", "プレゼント用に包装できますか？", "프레젠토요니 호소 데키마스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "airport": [["후쿠오카공항 국제선 터미널로 가고 싶습니다.", "福岡空港国際線ターミナルへ行きたいです。", "후쿠오카 쿠코 코쿠사이센 타미나루에 이키타이데스."], ["국제선 터미널은 어디인가요?", "国際線ターミナルはどこですか？", "코쿠사이센 타미나루와 도코데스카?"], ["공항 셔틀버스는 어디서 타나요?", "空港シャトルバスはどこで乗りますか？", "쿠코 샤토루바스와 도코데 노리마스카?"], ["체크인 카운터는 어디인가요?", "チェックインカウンターはどこですか？", "체크인 카운타와 도코데스카?"], ["출국장은 어디인가요?", "出発ロビーはどこですか？", "슛파츠 로비와 도코데스카?"], ["수하물은 어디에 맡기나요?", "荷物はどこで預けますか？", "니모츠와 도코데 아즈케마스카?"], ["보안검색대는 어디인가요?", "保安検査場はどこですか？", "호안켄사조와 도코데스카?"], ["탑승구는 어디인가요?", "搭乗口はどこですか？", "토조구치와 도코데스카?"], ["비행기 시간이 촉박합니다.", "飛行機の時間が迫っています。", "히코키노 지칸가 세맛테이마스."], ["화장실은 어디인가요?", "トイレはどこですか？", "토이레와 도코데스카?"], ["면세점은 어디인가요?", "免税店はどこですか？", "멘제이텐와 도코데스카?"], ["감사합니다.", "ありがとうございます。", "아리가토 고자이마스."]], "immigration": [["관광 목적으로 왔습니다.", "観光目的で来ました。", "칸코 모쿠테키데 키마시타."], ["3박 4일 동안 머무를 예정입니다.", "3泊4日滞在する予定です。", "산파쿠 욧카 타이자이 스루 요테이데스."], ["후쿠오카와 유후인을 여행할 예정입니다.", "福岡と湯布院を旅行する予定です。", "후쿠오카토 유후인오 료코 스루 요테이데스."], ["숙소는 코트호텔 후쿠오카 텐진입니다.", "宿泊先はコートホテル福岡天神です。", "슈쿠하쿠사키와 코토 호테루 후쿠오카 텐진데스."], ["두 번째 날은 유후인 야스하 호텔에 묵습니다.", "2日目は由布院やすはホテルに泊まります。", "후츠카메와 유후인 야스하 호테루니 토마리마스."], ["세 번째 날은 APA 호텔 하카타 에키마에 3초메에 묵습니다.", "3日目はAPAホテル博多駅前三丁目に泊まります。", "밋카메와 아파 호테루 하카타 에키마에 산초메니 토마리마스."], ["돌아가는 항공권이 있습니다.", "帰りの航空券があります。", "카에리노 코쿠켄가 아리마스."], ["직업은 학생입니다.", "職業は学生です。", "쇼쿠교와 가쿠세이데스."], ["친구/여자친구와 함께 여행합니다.", "友人／彼女と一緒に旅行します。", "유진/카노조토 잇쇼니 료코시마스."], ["신고할 물품은 없습니다.", "申告するものはありません。", "신코쿠스루 모노와 아리마센."], ["개인용 물품만 가지고 있습니다.", "個人用の荷物だけ持っています。", "코진요노 니모츠다케 못테이마스."], ["이 주소로 가면 됩니다.", "この住所に行けばいいです。", "코노 주소니 이케바 이이데스."]], "ticket": [["표는 어디에서 살 수 있나요?", "切符はどこで買えますか？", "킷푸와 도코데 카에마스카?"], ["유후인까지 가는 표를 사고 싶습니다.", "湯布院までの切符を買いたいです。", "유후인마데노 킷푸오 카이타이데스."], ["하카타까지 가는 표를 사고 싶습니다.", "博多までの切符を買いたいです。", "하카타마데노 킷푸오 카이타이데스."], ["두 명입니다.", "2人です。", "후타리데스."], ["편도표로 주세요.", "片道でお願いします。", "카타미치데 오네가이시마스."], ["왕복표가 있나요?", "往復券はありますか？", "오후쿠켄와 아리마스카?"], ["예약한 티켓을 확인하고 싶습니다.", "予約したチケットを確認したいです。", "요야쿠시타 치켓토오 카쿠닌시타이데스."], ["이 QR코드로 탑승할 수 있나요?", "このQRコードで乗れますか？", "코노 큐아루 코도데 노레마스카?"], ["교통카드로 탈 수 있나요?", "交通系ICカードで乗れますか？", "코츠케 아이시카도데 노레마스카?"], ["현금으로 결제할 수 있나요?", "現金で支払えますか？", "겐킨데 시하라에마스카?"], ["카드 결제 가능하나요?", "カードで支払えますか？", "카도데 시하라에마스카?"], ["이 표로 이 노선을 탈 수 있나요?", "この切符でこの路線に乗れますか？", "코노 킷푸데 코노 로센니 노레마스카?"], ["표를 잃어버렸습니다.", "切符をなくしました。", "킷푸오 나쿠시마시타."], ["개찰구는 어디인가요?", "改札口はどこですか？", "카이사츠구치와 도코데스카?"]], "taxfree": [["면세가 가능한가요?", "免税できますか？", "멘제이 데키마스카?"], ["택스프리 카운터는 어디인가요?", "免税カウンターはどこですか？", "멘제이 카운타와 도코데스카?"], ["이 상품은 면세 대상인가요?", "この商品は免税対象ですか？", "코노 쇼힌와 멘제이 타이쇼데스카?"], ["면세를 받으려면 얼마 이상 사야 하나요?", "免税を受けるにはいくら以上買えばいいですか？", "멘제이오 우케루니와 이쿠라 이조 카에바 이이데스카?"], ["여권이 필요하나요?", "パスポートは必要ですか？", "파스포토와 히츠요데스카?"], ["여권 원본이 있어야 하나요?", "パスポートの原本が必要ですか？", "파스포토노 겐폰가 히츠요데스카?"], ["면세 절차를 도와주실 수 있나요?", "免税手続きを手伝っていただけますか？", "멘제이 테츠즈키오 테츠닷테 이타다케마스카?"], ["소비세가 제외된 가격인가요?", "消費税抜きの価格ですか？", "쇼히제이 누키노 카카쿠데스카?"], ["면세 후 최종 가격은 얼마인가요?", "免税後の最終価格はいくらですか？", "멘제이고노 사이슈 카카쿠와 이쿠라데스카?"], ["이 봉투는 일본 안에서 열면 안 되나요?", "この袋は日本国内で開けてはいけませんか？", "코노 후쿠로와 니혼코쿠나이데 아케테와 이케마센카?"], ["영수증을 받을 수 있을까요?", "レシートをいただけますか？", "레시토오 이타다케마스카?"], ["면세 영수증도 같이 주세요.", "免税のレシートも一緒にください。", "멘제이노 레시토모 잇쇼니 쿠다사이."]], "mall": [["안내데스크는 어디인가요?", "インフォメーションカウンターはどこですか？", "인포메숀 카운타와 도코데스카?"], ["이 매장은 몇 층에 있나요?", "このお店は何階にありますか？", "코노 오미세와 난카이니 아리마스카?"], ["화장실은 어디인가요?", "トイレはどこですか？", "토이레와 도코데스카?"], ["엘리베이터는 어디인가요?", "エレベーターはどこですか？", "에레베타와 도코데스카?"], ["코인락커가 있나요?", "コインロッカーはありますか？", "코인 록카와 아리마스카?"], ["짐을 맡길 수 있는 곳이 있나요?", "荷物を預けられる場所はありますか？", "니모츠오 아즈케라레루 바쇼와 아리마스카?"], ["식당가는 어디인가요?", "レストラン街はどこですか？", "레스토랑가이와 도코데스카?"], ["기념품 매장은 어디인가요?", "お土産のお店はどこですか？", "오미야게노 오미세와 도코데스카?"], ["이 브랜드 매장은 어디인가요?", "このブランドのお店はどこですか？", "코노 부란도노 오미세와 도코데스카?"], ["영업시간은 몇 시까지인가요?", "営業時間は何時までですか？", "에이교지칸와 난지마데데스카?"], ["카드 결제 가능하나요?", "カードで支払えますか？", "카도데 시하라에마스카?"], ["한국어 가능한 직원이 있나요?", "韓国語ができるスタッフはいますか？", "칸코쿠고가 데키루 스탓후와 이마스카?"]]}, "googleTranslateMic": "https://translate.google.com/?sl=ja&tl=ko&op=translate", "menuCards": {"uchino_tamago": {"title": "우치노 타마고 직판점 · 유명메뉴", "note": "신선한 계란 요리 중심. 아침 식사로 가볍게 먹기 좋음.", "items": [{"name": "卵かけご飯 / 타마고카케고한", "desc": "신선한 계란을 밥에 비벼 먹는 대표 메뉴. 가장 기본이자 우치노 타마고다운 메뉴."}, {"name": "親子丼 / 오야코동", "desc": "계란과 닭고기를 올린 덮밥. 계란 맛을 확실히 느끼기 좋은 메뉴."}, {"name": "たまごプリン / 계란 푸딩", "desc": "식사 후 디저트나 간식용으로 보기 좋은 계란 디저트."}]}, "menkobo_naka": {"title": "멘코보 나카 / 麺工房なか · 유명메뉴", "note": "후쿠오카식 라멘보다 우동을 먹고 싶을 때 좋은 선택. 리뷰에서 고기우엉우동 언급이 많음.", "items": [{"name": "肉ごぼううどん / 고기우엉우동", "desc": "리뷰에서 대표적으로 언급되는 메뉴. 달짝지근한 고기와 우엉튀김 조합."}, {"name": "ぶっかけうどん / 붓카케 우동", "desc": "면 식감을 더 직접적으로 느끼기 좋은 메뉴."}, {"name": "いなり / 이나리", "desc": "우동과 같이 곁들이기 좋은 사이드 메뉴로 리뷰에 함께 언급됨."}]}, "yakiniku_yacchan": {"title": "야키니쿠 얏짱 · 유명메뉴", "note": "두꺼운 고기 컷이 강점. 공식 소개와 리뷰 모두 탄·하라미 쪽 언급이 많음.", "items": [{"name": "上タン塩 / 상탄시오", "desc": "두껍게 썬 소금 우설. 야키니쿠 얏짱의 대표 메뉴로 보기 좋음."}, {"name": "上ハラミ / 상하라미", "desc": "두툼한 하라미. 와사비 간장 조합 추천 언급이 있음."}, {"name": "ホルモン・テッチャン / 호르몬·텟창", "desc": "고소하고 부드러운 호르몬류. 술과 함께 먹기 좋은 메뉴."}, {"name": "タンシチュー / 탄 스튜", "desc": "메뉴에 보이는 사이드/마무리 후보. 고기만 먹기 부담스러울 때 참고."}]}, "kappa_shokudo": {"title": "갓파식당 · 유명메뉴", "note": "긴린호수 근처 점심 식사 후보. 오이타 향토 느낌 메뉴 중심.", "items": [{"name": "とり天定食 / 토리텐 정식", "desc": "오이타식 닭튀김 정식. 대표 메뉴로 보기 좋음."}, {"name": "チキンカツ定食 / 치킨카츠 정식", "desc": "무난한 튀김 정식 후보. 배고플 때 안정적인 선택."}, {"name": "だんご汁 / 당고지루", "desc": "오이타 향토 음식 느낌을 느낄 수 있는 국물 메뉴. 정식 구성에 포함될 수 있음."}, {"name": "明太子 관련 상품", "desc": "1층에서 명란 관련 상품을 판매했다는 후기 참고. 식사 외 기념품 느낌으로 확인."}]}, "oshokujidokoro_tama": {"title": "お食事処 玉 · 유명메뉴", "note": "2일차 저녁 확정 식당. 이자카야형 식당이라 당일 추천 메뉴 확인이 중요합니다.", "items": [{"name": "炙り鰯の刺身 / 아부리 정어리 사시미", "desc": "후기에서 본일 추천 메뉴로 언급된 생선 안주입니다."}, {"name": "鳥天 / 토리텐", "desc": "오이타 지역에서 무난하게 즐기기 좋은 닭튀김 메뉴입니다."}, {"name": "冷ややっこ / 히야얏코", "desc": "가볍게 시작하기 좋은 두부 안주입니다."}, {"name": "鯛のあら炊き / 도미 아라다키", "desc": "방문 후기에서 맛있었다고 언급된 생선 조림 계열 메뉴입니다."}, {"name": "焼き鯖寿司 / 구운 고등어 초밥", "desc": "후기에서 맛있었다고 언급된 메뉴로, 술과 같이 먹기 좋은 후보입니다."}, {"name": "地酒・麦焼酎 / 지역 술·보리소주", "desc": "유후인 저녁 한잔 분위기에 어울리는 주류 후보입니다."}]}, "samurai_ramen": {"title": "사무라이 라멘 / Ramen Samurai · 유명메뉴", "note": "3일차 하카타행 고속버스 전 점심 확정. 진한 돈코츠 계열이지만 냄새가 강하지 않다는 리뷰가 있고, 매운/기본 라멘 선택 언급이 있습니다.", "items": [{"name": "侍ラーメン / 사무라이 라멘", "desc": "가게 대표 라멘으로 보기 좋은 기본 선택. 국물, 차슈, 삶은 달걀, 레드소스 구성이 언급됩니다."}, {"name": "普通ラーメン / 기본 라멘", "desc": "매운맛이 부담스러우면 기본 라멘 쪽이 안정적입니다. 하카타 스타일 라멘이라는 후기가 있습니다."}, {"name": "辛いラーメン / 매운 라멘", "desc": "매운 라멘을 먹었다는 후기가 있어 매콤한 맛을 원할 때 후보로 볼 수 있습니다."}, {"name": "チャーシュー / 차슈 추가", "desc": "차슈가 언급되는 메뉴 구성. 고기 양을 늘리고 싶을 때 확인할 만합니다."}, {"name": "煮卵 / 삶은 달걀·계란 토핑", "desc": "라멘 구성에서 삶은 달걀 언급이 있어 추가 토핑으로 확인하기 좋습니다."}]}}};
+const home = document.getElementById('home');
+const sections = document.getElementById('sections');
+
+function enc(s) { return encodeURIComponent(s); }
+function mapsDir(origin, dest, mode) {
+  return 'https://www.google.com/maps/dir/?api=1&origin=' + enc(origin) + '&destination=' + enc(dest) + '&travelmode=' + mode;
+}
+function mapsNow(dest, mode) {
+  return 'https://www.google.com/maps/dir/?api=1&destination=' + enc(dest) + '&travelmode=' + mode;
+}
+function googleTranslateKoToJa(ko) {
+  return 'https://translate.google.com/?sl=ko&tl=ja&text=' + enc(ko) + '&op=translate';
+}
+function showDay(id) {
+  document.querySelectorAll('.day-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById(id).scrollIntoView({ behavior:'smooth', block:'start' });
+}
+function buildHome() {
+  home.innerHTML = DATA.days.map(day => `
+    <div class="day-box">
+      <button class="day-btn ${day.class}" onclick="showDay('${day.id}')">${day.badge}</button>
+      <div class="day-sub">${day.title.replace(day.badge + ' · ', '')}</div>
+      <a class="day-route" target="_blank" href="${day.full}">오늘 전체 거점 경로</a>
+    </div>
+  `).join('');
+}
+function itemHtml(day, item, idx, total) {
+  if (item.type === 'group') {
+    const opts = item.options.map(o => `
+      <div class="option">
+        <div class="option-title">${o.label}</div>
+        <div class="btnrow">
+          <a class="btn ${day.class}" target="_blank" href="${mapsDir(o.origin, o.dest, o.mode)}">계획 경로</a>
+          <a class="btn now" target="_blank" href="${mapsNow(o.dest, o.mode)}">현재위치 경로</a>
+        </div>
+      </div>
+    `).join('');
+    return `
+      <div class="step">
+        <div class="step-title">${item.title}</div>
+        <div class="step-memo">${item.memo}</div>
+        <button class="btn talk" onclick="openTalk('${day.id}', ${idx})">이동/도착 회화카드</button>
+        <div class="option-grid">${opts}</div>
+      </div>
+      ${idx < total - 1 ? '<div class="arrow">↓</div>' : ''}
+    `;
+  }
+  return `
+    <div class="step">
+      <div class="step-title">${item.title}</div>
+      <div class="step-memo">${item.memo}</div>
+      <div class="btnrow">
+        <a class="btn ${day.class}" target="_blank" href="${mapsDir(item.origin, item.dest, item.mode)}">계획 경로</a>
+        <a class="btn now" target="_blank" href="${mapsNow(item.dest, item.mode)}">현재위치 경로</a>
+        <button class="btn talk" onclick="openTalk('${day.id}', ${idx})">이동/도착 회화카드</button>
+        ${item.menuKey ? `<button class="btn ghost" onclick="openMenu('${item.menuKey}')">리뷰 유명메뉴</button>` : ''}
+      </div>
+    </div>
+    ${idx < total - 1 ? '<div class="arrow">↓</div>' : ''}
+  `;
+}
+function buildSections() {
+  sections.innerHTML = DATA.days.map(day => `
+    <section class="day-section" id="${day.id}">
+      <div class="section-head">
+        <span class="badge ${day.class}">${day.badge}</span>
+        <div><h2>${day.title}</h2><p>${day.sub}</p></div>
+      </div>
+      <div class="timeline">${day.timeline}</div>
+      ${day.items.map((item, idx) => itemHtml(day, item, idx, day.items.length)).join('')}
+      <a class="toplink" href="#top">↑ 일차 선택으로 돌아가기</a>
+    </section>
+  `).join('');
+}
+function renderPhraseGroup(title, phrases) {
+  return `
+    <div class="group-title">${title}</div>
+    ${phrases.map((p, i) => `
+      <div class="phrase">
+        <div class="phrase-num">${i + 1}.</div>
+        <div class="jp">🇯🇵 ${p[1]}</div>
+        <div class="pron">🔊 한글발음: ${p[2]}</div>
+        <div class="ko">🇰🇷 뜻: ${p[0]}</div>
+        <a class="btn papago" target="_blank" href="${googleTranslateKoToJa(p[0])}">구글번역으로 일본어 문장 보여주기</a>
+      </div>
+    `).join('')}
+  `;
+}
+function openTalk(dayId, index) {
+  const day = DATA.days.find(d => d.id === dayId);
+  const item = day.items[index];
+  const travelType = item.travelTalk || 'walking';
+  const destType = item.talk || 'restaurant';
+  const groups = [];
+
+  if (item.preTalk && DATA.phraseSets[item.preTalk]) {
+    groups.push(['입국심사·세관에서 쓸 회화', DATA.phraseSets[item.preTalk]]);
+  }
+
+  const travelPhrases = DATA.phraseSets[travelType] || DATA.phraseSets.walking;
+  groups.push(['가는 과정에서 쓸 회화', travelPhrases]);
+
+  if (item.ticketTalk && DATA.phraseSets[item.ticketTalk]) {
+    groups.push(['티켓·교통카드 관련 회화', DATA.phraseSets[item.ticketTalk]]);
+  }
+
+  const destPhrases = DATA.phraseSets[destType] || DATA.phraseSets.restaurant;
+  groups.push(['도착해서 쓸 회화', destPhrases]);
+
+  if (Array.isArray(item.extraTalks)) {
+    item.extraTalks.forEach(key => {
+      if (DATA.phraseSets[key]) {
+        const labelMap = {
+          taxfree: '택스프리·면세 회화',
+          mall: '쇼핑몰 대표 회화'
+        };
+        groups.push([labelMap[key] || '추가 회화', DATA.phraseSets[key]]);
+      }
+    });
+  }
+
+  document.getElementById('modalTitle').textContent = item.title + ' · 회화카드';
+  document.getElementById('modalSub').textContent = groups.map(g => g[0] + ' ' + g[1].length + '문장').join(' + ');
+  document.getElementById('phraseList').innerHTML = groups.map(g => renderPhraseGroup(g[0], g[1])).join('');
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('modal').setAttribute('aria-hidden','false');
+}
+
+function openMenu(menuKey) {
+  const card = DATA.menuCards && DATA.menuCards[menuKey];
+  if (!card) return;
+  document.getElementById('modalTitle').textContent = card.title;
+  document.getElementById('modalSub').textContent = card.note || '리뷰와 공식 소개에서 자주 언급되는 메뉴를 정리했습니다.';
+  document.getElementById('phraseList').innerHTML = card.items.map((m, i) => `
+    <div class="menu-card">
+      <div class="menu-name">${i + 1}. ${m.name}</div>
+      <div class="menu-desc">${m.desc}</div>
+    </div>
+  `).join('');
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('modal').setAttribute('aria-hidden','false');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('modal').setAttribute('aria-hidden','true');
+}
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') closeModal();
+});
+buildHome();
+buildSections();
+showDay('day1');
+</script>
+</body>
+</html>
